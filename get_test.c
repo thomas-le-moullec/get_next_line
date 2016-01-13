@@ -5,7 +5,7 @@
 ** Login   <le-mou_t@epitech.net>
 ** 
 ** Started on  Fri Jan  8 15:53:42 2016 Thomas LE MOULLEC
-** Last update Wed Jan 13 18:15:52 2016 Thomas LE MOULLEC
+** Last update Wed Jan 13 19:09:30 2016 Thomas LE MOULLEC
 */
 
 #include "get_next_line.h"
@@ -48,11 +48,11 @@ int		do_it(t_data *data, char *buffer, int *ptr)
     }
   j = 0;
   if (data->a == 0)
-    while (j != READ_SIZE)
+    while (j != READ_SIZE && buffer[j] != '\0')
       data->stock = my_strcar(data->stock, buffer[j++]);
   if (data->a == 1)
     {
-      while (j != *ptr)
+      while (j != *ptr && buffer[j] != '\0')
 	data->stock = my_strcar(data->stock, buffer[j++]);
       *ptr = j + 1;
       return (-1);
@@ -93,6 +93,8 @@ char		*get_next_line(int fd)
       if ((data.cmpt = read(fd, buffer, READ_SIZE)) <= 0)
 	return (NULL);
       buffer[data.cmpt] = '\0';
+      if (data.cmpt != READ_SIZE && buffer[data.cmpt - 1] != '\n')
+	buffer[data.cmpt] = '\n';
       ptr = 0;
       if ((do_it(&data, buffer, &ptr)) == -1)
 	return (data.stock);
@@ -106,7 +108,8 @@ int		main(int ac, char **av)
   char		*s;
 
   (void)ac;
-  fd = open(av[1], O_RDONLY);
+  if ((fd = open(av[1], O_RDONLY)) == -1)
+    return (-1);
   while ((s = get_next_line(fd)))
     {
       printf("%s\n", s);
