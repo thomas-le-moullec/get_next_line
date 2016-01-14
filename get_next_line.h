@@ -5,7 +5,7 @@
 ** Login   <le-mou_t@epitech.net>
 ** 
 ** Started on  Thu Jan  7 20:35:15 2016 Thomas LE MOULLEC
-** Last update Thu Jan 14 01:51:13 2016 Thomas LE MOULLEC
+** Last update Thu Jan 14 13:39:32 2016 Thomas LE MOULLEC
 */
 
 #include <fcntl.h>
@@ -14,7 +14,7 @@
 #include <stdio.h>
 
 #ifndef READ_SIZE
-# define READ_SIZE (2000000)
+# define READ_SIZE (1000)
 
 typedef struct		s_data
 {

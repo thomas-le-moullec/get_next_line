@@ -5,7 +5,7 @@
 ** Login   <le-mou_t@epitech.net>
 ** 
 ** Started on  Fri Jan  8 15:53:42 2016 Thomas LE MOULLEC
-** Last update Thu Jan 14 01:53:35 2016 Thomas LE MOULLEC
+** Last update Thu Jan 14 14:12:18 2016 Thomas LE MOULLEC
 */
 
 #include "get_next_line.h"
@@ -104,8 +104,7 @@ char		*get_next_line(int fd)
 	  buffer[data.cmpt] = '\n';
 	  buffer[data.cmpt + 1] = '\0';
 	}
-      ptr = 0;
-      if ((do_it(&data, buffer, &ptr)) == -1)
+      if (!(ptr = 0) && (do_it(&data, buffer, &ptr)) == -1)
 	return (data.stock);
     }
   return (NULL);
