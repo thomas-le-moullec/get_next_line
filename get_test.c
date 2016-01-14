@@ -5,7 +5,7 @@
 ** Login   <le-mou_t@epitech.net>
 ** 
 ** Started on  Fri Jan  8 15:53:42 2016 Thomas LE MOULLEC
-** Last update Thu Jan 14 00:32:26 2016 Thomas LE MOULLEC
+** Last update Thu Jan 14 01:53:35 2016 Thomas LE MOULLEC
 */
 
 #include "get_next_line.h"
@@ -84,7 +84,7 @@ int		check_static(char *buffer, int *ptr, t_data *data)
 char		*get_next_line(int fd)
 {
   t_data	data;
-  static char	buffer[READ_SIZE];
+  static char	buffer[READ_SIZE + 1];
   static int	ptr = 0;
 
   if ((check_static(buffer, &ptr, &data)) == 1)
@@ -94,31 +94,19 @@ char		*get_next_line(int fd)
       if ((data.cmpt = read(fd, buffer, READ_SIZE)) <= 0)
 	{
 	  buffer[data.cmpt] = '\0';
+	  if (data.stock != NULL && data.stock[0] != '\0')
+	    return (data.stock);
 	  return (NULL);
 	}
-      printf("buffer %s\n", buffer);
       buffer[data.cmpt] = '\0';
       if (data.cmpt != READ_SIZE && buffer[data.cmpt - 1] != '\n')
-	buffer[data.cmpt] = '\n';
+	{
+	  buffer[data.cmpt] = '\n';
+	  buffer[data.cmpt + 1] = '\0';
+	}
       ptr = 0;
       if ((do_it(&data, buffer, &ptr)) == -1)
 	return (data.stock);
     }
   return (NULL);
-}
-
-int		main(int ac, char **av)
-{
-  int		fd;
-  char		*s;
-
-  (void)ac;
-  if ((fd = open(av[1], O_RDONLY)) == -1)
-    return (-1);
-  while ((s = get_next_line(fd)))
-    {
-      printf("%s\n", s);
-      free(s);
-    }
-  return (0);
 }
