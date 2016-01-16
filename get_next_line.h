@@ -5,8 +5,11 @@
 ** Login   <le-mou_t@epitech.net>
 ** 
 ** Started on  Thu Jan  7 20:35:15 2016 Thomas LE MOULLEC
-** Last update Thu Jan 14 13:39:32 2016 Thomas LE MOULLEC
+** Last update Sat Jan 16 14:44:33 2016 Thomas LE MOULLEC
 */
+
+#ifndef		GET_NEXT_LINE_H_
+# define	GET_NEXT_LINE_H_
 
 #include <fcntl.h>
 #include <stdlib.h>
@@ -14,7 +17,8 @@
 #include <stdio.h>
 
 #ifndef READ_SIZE
-# define READ_SIZE (1000)
+# define READ_SIZE (1)
+#endif
 
 typedef struct		s_data
 {
@@ -24,5 +28,10 @@ typedef struct		s_data
   char			*stock;
   int			cmpt;
 }			t_data;
+
+int             do_it(t_data *, char *, int *);
+char		*my_strcar(char *, char);
+int             check_static(char *, int *, t_data *);
+char            *get_next_line(int);
 
 #endif

@@ -5,7 +5,7 @@
 ** Login   <le-mou_t@epitech.net>
 ** 
 ** Started on  Fri Jan  8 15:53:42 2016 Thomas LE MOULLEC
-** Last update Thu Jan 14 14:12:18 2016 Thomas LE MOULLEC
+** Last update Sat Jan 16 14:46:44 2016 Thomas LE MOULLEC
 */
 
 #include "get_next_line.h"
