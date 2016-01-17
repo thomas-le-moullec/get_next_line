@@ -5,7 +5,7 @@
 ** Login   <le-mou_t@epitech.net>
 ** 
 ** Started on  Thu Jan  7 20:35:15 2016 Thomas LE MOULLEC
-** Last update Sun Jan 17 20:13:31 2016 Thomas LE MOULLEC
+** Last update Sun Jan 17 20:16:19 2016 Thomas LE MOULLEC
 */
 
 #ifndef		GET_NEXT_LINE_H_
