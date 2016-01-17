@@ -5,7 +5,7 @@
 ** Login   <le-mou_t@epitech.net>
 ** 
 ** Started on  Fri Jan  8 15:53:42 2016 Thomas LE MOULLEC
-** Last update Sat Jan 16 14:46:44 2016 Thomas LE MOULLEC
+** Last update Sun Jan 17 20:11:09 2016 Thomas LE MOULLEC
 */
 
 #include "get_next_line.h"
@@ -81,11 +81,11 @@ int		check_static(char *buffer, int *ptr, t_data *data)
   return (0);
 }
 
-char		*get_next_line(int fd)
+char		*get_next_line(const int fd)
 {
-  t_data	data;
   static char	buffer[READ_SIZE + 1];
   static int	ptr = 0;
+  t_data	data;
 
   if ((check_static(buffer, &ptr, &data)) == 1)
     return (data.stock);

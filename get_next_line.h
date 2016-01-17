@@ -5,7 +5,7 @@
 ** Login   <le-mou_t@epitech.net>
 ** 
 ** Started on  Thu Jan  7 20:35:15 2016 Thomas LE MOULLEC
-** Last update Sat Jan 16 14:44:33 2016 Thomas LE MOULLEC
+** Last update Sun Jan 17 20:13:31 2016 Thomas LE MOULLEC
 */
 
 #ifndef		GET_NEXT_LINE_H_
@@ -18,7 +18,7 @@
 
 #ifndef READ_SIZE
 # define READ_SIZE (1)
-#endif
+#endif /* !READ_SIZE */
 
 typedef struct		s_data
 {
@@ -32,6 +32,6 @@ typedef struct		s_data
 int             do_it(t_data *, char *, int *);
 char		*my_strcar(char *, char);
 int             check_static(char *, int *, t_data *);
-char            *get_next_line(int);
+char            *get_next_line(const int);
 
 #endif
