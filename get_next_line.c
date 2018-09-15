@@ -1,8 +1,8 @@
 /*
-** get_next_line.c for get_next_line.c in /home/le-mou_t/rendu/CPE_2015_getnextline
+** get_next_line.c
 ** 
 ** Made by Thomas LE MOULLEC
-** Login   <le-mou_t@epitech.net>
+** 
 ** 
 ** Started on  Fri Jan  8 15:53:42 2016 Thomas LE MOULLEC
 ** Last update Sun Jan 17 20:11:09 2016 Thomas LE MOULLEC
